@@ -9,7 +9,11 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 require("dotenv").config();
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://microvision.shop", "https://www.microvision.shop"],
+  })
+);
 app.use(express.json());
 
 // --- CLOUDINARY CONFIG ---
